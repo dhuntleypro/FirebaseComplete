@@ -8,6 +8,10 @@
 import SwiftUI
 import AuthenticationServices
 
+/*
+ run on phone to avoid error with apple sign button
+ */
+
 /*  Set Up
  
  1. Signing and Capablilities
@@ -28,6 +32,7 @@ import AuthenticationServices
  6. Next | Register | Done
  
  */
+
 
 struct SignInWithAppleView: UIViewRepresentable {
     
@@ -61,7 +66,7 @@ struct SignInWithAppleView: UIViewRepresentable {
         
         @objc func didTapButton() {
             let provider = ASAuthorizationAppleIDProvider()
-            #warning("Need to provide a nonce")
+            currentNonce = FBAuth.randomNonceString()
             
             let request = provider.createRequest()
             // request full name and email from the user's Apple ID
@@ -107,7 +112,22 @@ struct SignInWithAppleView: UIViewRepresentable {
                     return
                 }
                 
-                #warning("Need to complete signin")
+                FBAuth.signInWithApple(idTokenString: idTokenString, nonce: nonce) { (result) in
+                    switch result {
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    case .success(let authDataResult):
+                        let signInWithAppleResult = (authDataResult,appleIDCredential)
+                        FBAuth.handle(signInWithAppleResult) { (result) in
+                            switch result {
+                            case .failure(let error) :
+                                print(error.localizedDescription)
+                            case .success( _):
+                                print("Successfull Login")
+                            }
+                        }
+                    }
+                }
             } else {
                 print("Could not get credentials")
             }

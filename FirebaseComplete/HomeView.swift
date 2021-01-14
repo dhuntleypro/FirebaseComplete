@@ -14,7 +14,7 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Text("Logged in as \(userInfo.user.name))")
+                Text("Logged in as \(userInfo.user.name)")
                 
               //  TextField("name" ,text: $userInfo.name )
             }

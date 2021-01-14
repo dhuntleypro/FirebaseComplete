@@ -17,6 +17,8 @@ struct SignInWithEmailView: View {
     @State var showRegisterSheet = false
     @State var showForgotPassword = false
     
+    @State private var showAlert = false
+    @State private var authError : EmailAuthError?
     var body: some View {
         VStack {
             TextField("Email Address",
@@ -40,6 +42,16 @@ struct SignInWithEmailView: View {
             VStack(spacing: 10) {
                 Button(action: {
                     // Sign In Action
+                    FBAuth.authenticate(withEmail: self.user.email,
+                                        password: self.user.password) { (result) in
+                        switch result {
+                        case .failure(let error):
+                            self.authError = error
+                            self.showAlert = true
+                        case .success(_) :
+                            print("Signed In")
+                        }
+                    }
                 }) {
                     Text("Login")
                         .padding(.vertical, 15)
@@ -68,6 +80,16 @@ struct SignInWithEmailView: View {
                     SignUpView()
                 }
 
+            }
+            .alert(isPresented: $showAlert) {
+                Alert(title: Text("Login Error"), message: Text(self.authError?.localizedDescription ?? "Unknown Error"), dismissButton: .default(Text("OK")) {
+                    if self.authError == .incorrectPassword {
+                        self.user.password = ""
+                    } else {
+                        self.user.password = ""
+                        self.user.email = ""
+                    }
+                })
             }
         }
         .padding(.top, 100)

@@ -207,20 +207,21 @@ struct BookEditView : View {
                     }) {
                         Text("Done")
                     }.disabled(!viewModel.modified)
-                
-                
             )
         }
     }
+    
     
     func handleCancelTapped() {
         dismiss()
     }
     
+
     func handleDoneTapped() {
         viewModel.save()
         dismiss()
     }
+    
     
     func dismiss() {
         presentationMode.wrappedValue.dismiss()

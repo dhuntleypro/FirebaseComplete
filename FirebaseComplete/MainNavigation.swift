@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MainNavigation: View {
+    
     var body: some View {
         NavigationView {
             List {
@@ -21,6 +22,10 @@ struct MainNavigation: View {
                 
                 NavigationLink(destination: BookListView()) {
                     Text("BookListView")
+                }
+                
+                NavigationLink(destination: MYFBUserListView(userProduct: UserProduct( title: "", author: "", numberofPages: 0))) {
+                    Text("My User Users View")
                 }
                 
                 

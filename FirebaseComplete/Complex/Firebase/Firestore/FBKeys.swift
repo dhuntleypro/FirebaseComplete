@@ -20,5 +20,6 @@ enum FBKeys {
         static let email = "email"
         
         // Add app specific keys here
+        static let storeName = "storeName"
     }
 }

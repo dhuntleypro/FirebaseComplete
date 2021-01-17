@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		862D8EFA25B052C400062677 /* FirebaseCompleteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862D8EF925B052C400062677 /* FirebaseCompleteApp.swift */; };
-		862D8EFC25B052C400062677 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862D8EFB25B052C400062677 /* ContentView.swift */; };
+		862D8EFC25B052C400062677 /* AppNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862D8EFB25B052C400062677 /* AppNavigationView.swift */; };
 		862D8EFE25B052C600062677 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 862D8EFD25B052C600062677 /* Assets.xcassets */; };
 		862D8F0125B052C600062677 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 862D8F0025B052C600062677 /* Preview Assets.xcassets */; };
 		862D8F0A25B052ED00062677 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 862D8F0925B052ED00062677 /* GoogleService-Info.plist */; };
@@ -26,6 +26,11 @@
 		862D8F3A25B05C0C00062677 /* SignInWithEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862D8F3925B05C0C00062677 /* SignInWithEmailView.swift */; };
 		862D8F3D25B05C2000062677 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862D8F3C25B05C2000062677 /* SignUpView.swift */; };
 		862D8F4225B05FBF00062677 /* SignInWithAppleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862D8F4125B05FBF00062677 /* SignInWithAppleView.swift */; };
+		865AFF0E25B09E1C003D8A13 /* SignInWithEmailViewD2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865AFF0D25B09E1C003D8A13 /* SignInWithEmailViewD2.swift */; };
+		865AFF1525B09E4E003D8A13 /* SignUpViewD2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865AFF1425B09E4E003D8A13 /* SignUpViewD2.swift */; };
+		865AFF1825B09E57003D8A13 /* ForgotPasswordViewD2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865AFF1725B09E57003D8A13 /* ForgotPasswordViewD2.swift */; };
+		8680F34B25B3B89A006A8B70 /* SimpleNofirebasePulls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8680F34A25B3B89A006A8B70 /* SimpleNofirebasePulls.swift */; };
+		8680F34E25B3B97B006A8B70 /* MainNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8680F34D25B3B97B006A8B70 /* MainNavigation.swift */; };
 		86C99E0425B06B52001B181F /* FBFirestore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C99E0325B06B52001B181F /* FBFirestore.swift */; };
 		86C99E0725B06B79001B181F /* FireStoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C99E0625B06B79001B181F /* FireStoreError.swift */; };
 		86C99E0A25B06B93001B181F /* FBKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C99E0925B06B93001B181F /* FBKeys.swift */; };
@@ -37,7 +42,7 @@
 /* Begin PBXFileReference section */
 		862D8EF625B052C400062677 /* FirebaseComplete.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseComplete.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		862D8EF925B052C400062677 /* FirebaseCompleteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseCompleteApp.swift; sourceTree = "<group>"; };
-		862D8EFB25B052C400062677 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		862D8EFB25B052C400062677 /* AppNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigationView.swift; sourceTree = "<group>"; };
 		862D8EFD25B052C600062677 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		862D8F0025B052C600062677 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		862D8F0225B052C600062677 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -50,6 +55,11 @@
 		862D8F3925B05C0C00062677 /* SignInWithEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithEmailView.swift; sourceTree = "<group>"; };
 		862D8F3C25B05C2000062677 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		862D8F4125B05FBF00062677 /* SignInWithAppleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleView.swift; sourceTree = "<group>"; };
+		865AFF0D25B09E1C003D8A13 /* SignInWithEmailViewD2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithEmailViewD2.swift; sourceTree = "<group>"; };
+		865AFF1425B09E4E003D8A13 /* SignUpViewD2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewD2.swift; sourceTree = "<group>"; };
+		865AFF1725B09E57003D8A13 /* ForgotPasswordViewD2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewD2.swift; sourceTree = "<group>"; };
+		8680F34A25B3B89A006A8B70 /* SimpleNofirebasePulls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleNofirebasePulls.swift; sourceTree = "<group>"; };
+		8680F34D25B3B97B006A8B70 /* MainNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigation.swift; sourceTree = "<group>"; };
 		86C99E0125B0627B001B181F /* FirebaseComplete.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FirebaseComplete.entitlements; sourceTree = "<group>"; };
 		86C99E0325B06B52001B181F /* FBFirestore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBFirestore.swift; sourceTree = "<group>"; };
 		86C99E0625B06B79001B181F /* FireStoreError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireStoreError.swift; sourceTree = "<group>"; };
@@ -98,9 +108,9 @@
 				86C99E0125B0627B001B181F /* FirebaseComplete.entitlements */,
 				862D8EF925B052C400062677 /* FirebaseCompleteApp.swift */,
 				862D8F0925B052ED00062677 /* GoogleService-Info.plist */,
-				862D8EFB25B052C400062677 /* ContentView.swift */,
-				862D8F2125B057BA00062677 /* HomeView.swift */,
-				862D8F2F25B05B6800062677 /* Firebase */,
+				8680F34D25B3B97B006A8B70 /* MainNavigation.swift */,
+				8680F35025B3BAE6006A8B70 /* Simple */,
+				8680F34625B3B869006A8B70 /* Complex */,
 				862D8EFD25B052C600062677 /* Assets.xcassets */,
 				862D8F0225B052C600062677 /* Info.plist */,
 				862D8EFF25B052C600062677 /* Preview Content */,
@@ -132,9 +142,8 @@
 			children = (
 				862D8F1E25B0574700062677 /* LoginView.swift */,
 				862D8F4125B05FBF00062677 /* SignInWithAppleView.swift */,
-				862D8F3525B05BFA00062677 /* ForgotPasswordView.swift */,
-				862D8F3925B05C0C00062677 /* SignInWithEmailView.swift */,
-				862D8F3C25B05C2000062677 /* SignUpView.swift */,
+				865AFF0A25B09D67003D8A13 /* Design #1 */,
+				865AFF1125B09E3B003D8A13 /* Design #2 */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -158,6 +167,44 @@
 				86C99E0C25B06BB5001B181F /* FBUser.swift */,
 			);
 			path = Firestore;
+			sourceTree = "<group>";
+		};
+		865AFF0A25B09D67003D8A13 /* Design #1 */ = {
+			isa = PBXGroup;
+			children = (
+				862D8F3925B05C0C00062677 /* SignInWithEmailView.swift */,
+				862D8F3C25B05C2000062677 /* SignUpView.swift */,
+				862D8F3525B05BFA00062677 /* ForgotPasswordView.swift */,
+			);
+			path = "Design #1";
+			sourceTree = "<group>";
+		};
+		865AFF1125B09E3B003D8A13 /* Design #2 */ = {
+			isa = PBXGroup;
+			children = (
+				865AFF0D25B09E1C003D8A13 /* SignInWithEmailViewD2.swift */,
+				865AFF1425B09E4E003D8A13 /* SignUpViewD2.swift */,
+				865AFF1725B09E57003D8A13 /* ForgotPasswordViewD2.swift */,
+			);
+			path = "Design #2";
+			sourceTree = "<group>";
+		};
+		8680F34625B3B869006A8B70 /* Complex */ = {
+			isa = PBXGroup;
+			children = (
+				862D8EFB25B052C400062677 /* AppNavigationView.swift */,
+				862D8F2125B057BA00062677 /* HomeView.swift */,
+				862D8F2F25B05B6800062677 /* Firebase */,
+			);
+			path = Complex;
+			sourceTree = "<group>";
+		};
+		8680F35025B3BAE6006A8B70 /* Simple */ = {
+			isa = PBXGroup;
+			children = (
+				8680F34A25B3B89A006A8B70 /* SimpleNofirebasePulls.swift */,
+			);
+			path = Simple;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,10 +288,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8680F34E25B3B97B006A8B70 /* MainNavigation.swift in Sources */,
 				86C99E1325B06C39001B181F /* FBAuthError.swift in Sources */,
-				862D8EFC25B052C400062677 /* ContentView.swift in Sources */,
+				865AFF1825B09E57003D8A13 /* ForgotPasswordViewD2.swift in Sources */,
+				862D8EFC25B052C400062677 /* AppNavigationView.swift in Sources */,
 				862D8F4225B05FBF00062677 /* SignInWithAppleView.swift in Sources */,
 				862D8F3625B05BFA00062677 /* ForgotPasswordView.swift in Sources */,
+				865AFF1525B09E4E003D8A13 /* SignUpViewD2.swift in Sources */,
 				862D8F2525B059CF00062677 /* UserViewModel.swift in Sources */,
 				862D8F3A25B05C0C00062677 /* SignInWithEmailView.swift in Sources */,
 				862D8F1C25B054FE00062677 /* UserInfo.swift in Sources */,
@@ -253,9 +303,11 @@
 				86C99E0725B06B79001B181F /* FireStoreError.swift in Sources */,
 				862D8F2225B057BA00062677 /* HomeView.swift in Sources */,
 				862D8F3D25B05C2000062677 /* SignUpView.swift in Sources */,
+				865AFF0E25B09E1C003D8A13 /* SignInWithEmailViewD2.swift in Sources */,
 				862D8EFA25B052C400062677 /* FirebaseCompleteApp.swift in Sources */,
 				86C99E1025B06BFA001B181F /* FBAuth.swift in Sources */,
 				86C99E0D25B06BB5001B181F /* FBUser.swift in Sources */,
+				8680F34B25B3B89A006A8B70 /* SimpleNofirebasePulls.swift in Sources */,
 				86C99E0A25B06B93001B181F /* FBKeys.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

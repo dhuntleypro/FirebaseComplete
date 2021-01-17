@@ -17,7 +17,7 @@ struct SignUpView: View {
     @State private var errorString = ""
     
     var body: some View {
-        NavigationView {
+ 
             VStack {
                 Group {
                     VStack(alignment: .leading) {
@@ -81,7 +81,7 @@ struct SignUpView: View {
                 .navigationBarItems(trailing: Button("Dismiss") {
                     self.presentationMode.wrappedValue.dismiss()
                 })
-        }
+        
     }
 }
 

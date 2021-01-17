@@ -19,23 +19,22 @@ struct LoginView: View {
  //   @State private var action : Action?
     
     var body: some View {
-        VStack {
-            SignInWithEmailView()
-            
-            SignInWithAppleView()
-                .frame(width: 200, height: 50)
-            
-            Spacer()
-        }
-//        .sheet(isPresented: $showSheet) {
-//            if self.action == .signUp {
-//                SignUpView()
-//            } else if self.action == .resetPW{
-//                ForgotPasswordView()
-//            } else {
-//                Text("Error")
-//            }
+//        // Design #1
+//        VStack {
+//
+//            SignInWithEmailView()
+//
+//            SignInWithAppleView()
+//                .frame(width: 200, height: 50)
+//
+//            Spacer()
 //        }
+        
+        
+        // Design #2
+        VStack {
+            SignInWithEmailViewD2()
+        }
     }
 }
 

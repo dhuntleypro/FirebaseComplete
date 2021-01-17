@@ -116,7 +116,8 @@ struct FBAuth {
         
         let data = FBUser.dataDict(uid: uid,
                                          name: name,
-                                         email: email)
+                                         email: email,
+                                         storeName: "")
         
         // Now create or merge the User in Firestore DB
         FBFirestore.mergeFBUser(data, uid: uid) { (result) in
@@ -183,7 +184,8 @@ struct FBAuth {
             }
             let data = FBUser.dataDict(uid: authResult!.user.uid,
                                              name: name,
-                                             email: authResult!.user.email!)
+                                             email: authResult!.user.email!,
+                                             storeName: "")
             
             FBFirestore.mergeFBUser(data, uid: authResult!.user.uid) { (result) in
                 completionHandler(result)

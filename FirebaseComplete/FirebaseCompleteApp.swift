@@ -18,7 +18,9 @@ struct FirebaseCompleteApp: App {
     }
     var body: some Scene {
         WindowGroup {
-            ContentView().environmentObject(userInfo)
+           // environmentObject(userInfo) only needed for complex
+            MainNavigation().environmentObject(userInfo)
+            
         }
     }
 }

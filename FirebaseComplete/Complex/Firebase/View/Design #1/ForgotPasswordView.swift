@@ -24,7 +24,7 @@ struct ForgotPasswordView: View {
     @State private var errorString : String?
     
     var body: some View {
-        NavigationView {
+        
             VStack {
                 TextField("Enter email address", text: $user.email).autocapitalization(.none).keyboardType(.emailAddress)
                 Button(action: {
@@ -63,7 +63,7 @@ struct ForgotPasswordView: View {
                     
                 })
             }
-        }
+        
     }
 }
 

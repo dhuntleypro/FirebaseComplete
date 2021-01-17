@@ -12,7 +12,7 @@ struct HomeView: View {
     @EnvironmentObject var userInfo: UserInfo
     
     var body: some View {
-        NavigationView {
+  
             VStack {
                 Text("Logged in as \(userInfo.user.name)")
                 
@@ -25,7 +25,7 @@ struct HomeView: View {
                     print("Logged Out")
                 }
             })
-        }
+        
         .onAppear() {
             guard let uid = Auth.auth().currentUser?.uid else {
                 return

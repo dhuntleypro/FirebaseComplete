@@ -11,7 +11,7 @@ struct SimpleNoFirebasePulls: View {
     var body: some View {
   
 
-        TaskListView()
+        TaskListView2()
         
     }
 }
@@ -25,18 +25,18 @@ struct SimpleNoFirebasePulls_Previews: PreviewProvider {
 
 
 // MODEL
-struct Task: Identifiable {
+struct Task2: Identifiable {
     var id: String = UUID().uuidString
     var title : String
     var completed: Bool
 }
 
 #if DEBUG
-let testDataTasks = [
-    Task(title: "yooooo", completed: true),
-    Task(title: "Haaaaaaaa", completed: true),
-    Task(title: "yoofvrvrvrvooo", completed: false),
-    Task(title: "dddddddo", completed: true)
+let testDataTasks2 = [
+    Task2(title: "yooooo", completed: true),
+    Task2(title: "Haaaaaaaa", completed: true),
+    Task2(title: "yoofvrvrvrvooo", completed: false),
+    Task2(title: "dddddddo", completed: true)
 ]
 
 #endif
@@ -44,13 +44,13 @@ let testDataTasks = [
 // VIEW
 
 // list out items in list
-struct TaskListView : View {
+struct TaskListView2 : View {
     
-    let tasks = testDataTasks
+    let tasks = testDataTasks2
     var body: some View {
         VStack(alignment: .leading) {
             List(tasks) { item in
-                TaskCell(task: item)
+                TaskCell2(task: item)
             }
         }
         .navigationBarItems(
@@ -66,8 +66,8 @@ struct TaskListView : View {
 }
 
 // Checkbox
-struct TaskCell : View {
-    let task : Task
+struct TaskCell2 : View {
+    let task : Task2
     var body: some View {
         Image(systemName: task.completed ? "checkmark.circle.fill": "circle"  )
             .resizable()

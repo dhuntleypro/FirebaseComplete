@@ -18,6 +18,13 @@ struct MainNavigation: View {
                 NavigationLink(destination: AppNavigationView()) {
                     Text("Complex")
                 }
+                
+                NavigationLink(destination: BookListView()) {
+                    Text("BookListView")
+                }
+                
+                
+                
             }
             .navigationTitle(Text("Firebase"))
         }

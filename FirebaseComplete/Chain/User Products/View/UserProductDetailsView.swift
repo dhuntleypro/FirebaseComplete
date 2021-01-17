@@ -18,3 +18,22 @@ struct UserProductDetailsView_Previews: PreviewProvider {
         UserProductDetailsView()
     }
 }
+
+
+struct ProductDesignImageAndName : View {
+    var userProduct : UserProduct
+
+    var body: some View {
+        VStack {
+          //  Image("image")
+            
+            Rectangle()
+                .frame(width: 100, height: 100)
+            
+            Text(userProduct.title)
+                .bold()
+            
+        
+        }
+    }
+}

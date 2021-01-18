@@ -1,5 +1,5 @@
 //
-//  MYFBUserDetailsView.swift
+//  FirebaseLayoutDetailsView.swift
 //  FirebaseComplete
 //
 //  Created by Darrien Huntley on 1/17/21.
@@ -7,15 +7,16 @@
 
 import SwiftUI
 
-struct MYFBUserDetailsView: View {
+
+struct FirebaseLayoutDetailsView: View {
     
     // fetch data / subscribe
-    @StateObject var  myFBUserVM = MYFBUsersViewModel()
-    @ObservedObject var  userProductVM = UserProductViewModel()
+    @StateObject var  firebaseLayoutVM = FirebaseLayoutsViewModel()
+    @ObservedObject var  firebaseLayoutItemVM = FirebaseLayoutItemViewModel()
     
     // Call
-    var myFBUser : MYFBUser
-    var userProduct : UserProduct
+    var firebaseLayout : FirebaseLayout
+    var firebaseLayoutItem : FirebaseLayoutItem
     
     @State var presentAddNewProductSreen = false
     
@@ -24,53 +25,53 @@ struct MYFBUserDetailsView: View {
         VStack {
             
             
-            MYFBUserDetailsMenuView(myFBUser: myFBUser)
+            FirebaseLayoutDetailsMenuView(firebaseLayout: firebaseLayout)
             
             
             // Products List
-            ProductListViewWithPlus(presentAddNewProductSreen: $presentAddNewProductSreen, userProductVM : userProductVM)
-            
+//            FirebaseLayoutItemListViewWithPlus(presentAddNewProductSreen: $presentAddNewProductSreen, firebaseLayoutItem : firebaseLayoutItem)
+//
             // Collections List
             Button(action: {
-                userProductVM.addADocument()
+                firebaseLayoutItemVM.addADocument()
             }){
                 Image(systemName: "command")
                     .font(.system(size: 66, weight: .regular))
             }
-            .padding()
+            .padding(50)
     
             Spacer()
         }
-        .navigationBarHidden(true)
         .onAppear() {
-            self.myFBUserVM.subscribe()
+            self.firebaseLayoutItemVM.subscribe()
             //   self.userProductVM.subscribe()
         }
     }
 }
 
-//struct MYFBUserDetailsView_Previews: PreviewProvider {
+//struct FirebaseLayoutDetailsView_Previews: PreviewProvider {
 //    static var previews: some View {
-//        MYFBUserDetailsView()
+//        FirebaseLayoutDetailsView()
 //    }
 //}
 
 
-struct MYFBUserDetailsMenuView : View {
-    var myFBUser : MYFBUser
+struct FirebaseLayoutDetailsMenuView : View {
+    var firebaseLayout : FirebaseLayout
     
     
     var body: some View {
         HStack {
             
-            Text("Hello, \(myFBUser.title)")
+            Text("Hello, \(firebaseLayout.title)")
                 .font(.system(size: 30, weight: .bold, design: .rounded))
             Spacer()
-            NavigationLink(destination: ProfileView(myFBUser: myFBUser)) {
-                Image(systemName: "person")
-            }
-            .frame(width: 105, height: 105)
-            .foregroundColor(.black)
+            
+//            NavigationLink(destination: FirebaseLayoutProfileView(firebaseLayout: firebaseLayout)) {
+//                Image(systemName: "person")
+//            }
+//            .frame(width: 105, height: 105)
+//            .foregroundColor(.black)
         }
         .padding()
         
@@ -79,10 +80,10 @@ struct MYFBUserDetailsMenuView : View {
 
 
 
-struct ProductListViewWithPlus : View {
+struct FirebaseLayoutItemListViewWithPlus : View {
     
     @Binding var presentAddNewProductSreen : Bool
-    @ObservedObject var  userProductVM = UserProductViewModel()
+    @ObservedObject var  firebaseLayoutItemVM = FirebaseLayoutItemViewModel()
     
     var body: some View {
         // Products
@@ -103,15 +104,16 @@ struct ProductListViewWithPlus : View {
             }
             .padding()
             .sheet(isPresented: $presentAddNewProductSreen) {
-                UserProductAddView()
+                FirebaseLayoutItemAddView()
             }
             
             ScrollView(.horizontal) {
                 HStack {
-                    ForEach(userProductVM.userProducts , id: \.id) { product in
-                        NavigationLink(destination: UserProductDetailsView()) {
-                            ProductDesignImageAndName(userProduct: product)
-                            
+                    ForEach(firebaseLayoutItemVM.firebaseLayouts , id: \.id) { item in
+                        NavigationLink(destination: FirebaseLayoutItemDetailsView()) {
+                           // FirebaseLayoutItemDesignImageAndName(firebaseLayoutItem: item)
+                            FirebaseLayoutItemDesignImageAndName()
+
                         }
                     }
                 }
@@ -119,7 +121,7 @@ struct ProductListViewWithPlus : View {
             }
         }
         .onAppear() {
-            self.userProductVM.subscribe()
+            self.firebaseLayoutItemVM.subscribe()
         }
         
         

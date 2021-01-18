@@ -1,9 +1,10 @@
 //
-//  UserProductViewModel.swift
+//  FirebaseLayoutItemViewModel.swift
 //  FirebaseComplete
 //
 //  Created by Darrien Huntley on 1/17/21.
 //
+
 
 import SwiftUI
 import Firebase
@@ -11,11 +12,11 @@ import FirebaseFirestoreSwift
 import Combine
 
 
-class UserProductViewModel: ObservableObject{
-    // hold collection called userProduct and Instantiate and empty array
-    @Published var userProducts = [UserProduct]()
+class FirebaseLayoutItemViewModel: ObservableObject{
+    // hold collection called firebaseLayout and Instantiate and empty array
+    @Published var firebaseLayouts = [FirebaseLayout]()
     
-    @Published var userProduct : UserProduct
+    @Published var firebaseLayout : FirebaseLayout
     
     // track if fields are modified / not empty
     @Published var modified = false
@@ -25,12 +26,12 @@ class UserProductViewModel: ObservableObject{
     
     private var cancellables = Set<AnyCancellable>()
     
-    init(userProduct: UserProduct = UserProduct(title: "", author: "", numberofPages: 0)) {
-        self.userProduct = userProduct
+    init(firebaseLayout: FirebaseLayout = FirebaseLayout(title: "", author: "", numberofPages: 0)) {
+        self.firebaseLayout = firebaseLayout
         
-        self.$userProduct
+        self.$firebaseLayout
             .dropFirst()
-            .sink { [ weak self ] userProduct in
+            .sink { [ weak self ] firebaseLayout in
                 self?.modified = true
             }
             .store(in: &cancellables)
@@ -38,10 +39,10 @@ class UserProductViewModel: ObservableObject{
     
     
     
-    // Subscribe to any changes in UserProduct
+    // Subscribe to any changes in FirebaseLayout
     func subscribe() {
         db
-            .collection("userProducts")
+            .collection("firebaseLayouts")
             .addSnapshotListener { (querySnapshot, error) in
                 // Checks if docmuent exist
                 guard let documents = querySnapshot?.documents else {
@@ -49,11 +50,11 @@ class UserProductViewModel: ObservableObject{
                     return
                 }
                 
-                //   self.userProducts = documents.compactMap { (queryDocumentSnapshot) -> UserProduct? in
-                self.userProducts = documents.compactMap { queryDocumentSnapshot in
+                //   self.firebaseLayouts = documents.compactMap { (queryDocumentSnapshot) -> FirebaseLayout? in
+                self.firebaseLayouts = documents.compactMap { queryDocumentSnapshot in
                     
                     //  return
-                    try? queryDocumentSnapshot.data(as: UserProduct.self)
+                    try? queryDocumentSnapshot.data(as: FirebaseLayout.self)
                     
                 }
             }
@@ -62,18 +63,18 @@ class UserProductViewModel: ObservableObject{
     
     
     // Add a new User Product to User
-    func addUserProduct(
-        userId : String ,
-        userProduct: UserProduct
+    func addFirebaseLayout(
+        firebaseLayoutId : String ,
+        firebaseLayout: FirebaseLayout
     ) {
-       // let userId = MYFBUser(from: UUID().uuidString)
+       // let firebaseLayoutId = MYFBUser(from: UUID().uuidString)
         do {
             let _ = try
                 db
-                .collection("users")
-                .document(userId)
-                .collection("userProducts")
-                .addDocument(from: userProduct)
+                .collection("firebaseLayouts")
+                .document(firebaseLayoutId)
+                .collection("firebaseLayouts")
+                .addDocument(from: firebaseLayout)
         }
         catch {
             print(error)
@@ -86,13 +87,13 @@ class UserProductViewModel: ObservableObject{
     
     // Save edits to firebase
     func save() {
-        addUserProduct(userId: "", userProduct: userProduct)
+        addFirebaseLayout(firebaseLayoutId: "", firebaseLayout: firebaseLayout)
     }
     
     
     func addADocument(
-        // userId : String ,
-        // userProduct: UserProduct
+        // firebaseLayoutId : String ,
+        // firebaseLayout: FirebaseLayout
     ) {
         
         // Add a new document with a generated id.

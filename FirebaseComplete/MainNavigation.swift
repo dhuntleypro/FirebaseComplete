@@ -28,6 +28,15 @@ struct MainNavigation: View {
                     Text("My User Users View")
                 }
                 
+                NavigationLink(destination: QuickCommandView()) {
+                    Text("BookListView")
+                }
+                
+                NavigationLink(destination: CollectionStart()) {
+                    Text("Firebase Layout View")
+                }
+                
+                
                 
                 
             }
